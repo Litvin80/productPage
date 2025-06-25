@@ -1,0 +1,20 @@
+@use 'fonts';
+@use 'variables';
+@use 'nule';
+@use './helpers/functions' as *;
+@use './helpers/mixin' as *;
+@use './helpers/globals' as *;
+@use 'utils' as *;
+
+@use 'blocks/header';
+@use 'blocks/icon';
+@use 'blocks/button';
+@use 'blocks/footer';
+@use 'blocks/advantages';
+@use 'blocks/partners';
+@use 'blocks/discover';
+@use 'blocks/video-section';
+@use 'blocks/description';
+@use 'blocks/expandable-content';
+@use 'blocks/features';
+@use 'blocks/rating';

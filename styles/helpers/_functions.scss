@@ -1,0 +1,11 @@
+@use 'sass:math';
+
+@function rem($valueInPixels, $baseFontSize: 16) {
+    $remValue: math.div($valueInPixels, $baseFontSize);
+    @return #{$remValue}rem;
+}
+
+@function em($valueInPixels, $baseFontSize: 16) {
+    $emValue: math.div($valueInPixels, $baseFontSize);
+    @return #{$emValue}em;
+}

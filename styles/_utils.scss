@@ -1,0 +1,26 @@
+@use './helpers/mixin' as *;
+@use './helpers/_functions.scss' as *;
+@use './helpers/globals' as *;
+
+[class*="__container"] {
+    @if ($maxWidthContainer>0) {
+        max-width: rem($containerWidth);
+        margin: 0 auto;
+    }
+    @if ($containerPadding>0) {
+        @if ($maxWidthContainer>0) {
+            padding: 0 rem(calc($containerPadding / 2));
+        }
+    }
+}
+
+.visually-hidden {
+    @include visually-hidden;
+}
+
+.title {
+    font-weight: 600;
+    @include adaptiveText(42, 28);
+	line-height: 1.28;
+}
+

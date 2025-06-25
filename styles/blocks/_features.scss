@@ -1,0 +1,52 @@
+@use '../helpers/functions' as *;
+@use '../helpers/globals' as *;
+@use '../helpers/mixin' as *;
+
+.features {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue('row-gap', 42, 30);
+  }
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: rem(24);
+    @include adaptiveValue('column-gap', 90, 10);
+    @media (max-width: $mobile) {
+      grid-template-columns: auto;
+    }
+  }
+}
+.specs-features {
+  display: flex;
+  flex-direction: column;
+  @include adaptiveValue('row-gap', 35, 24);
+  &__item {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    column-gap: rem(5);
+    @media (max-width: $tablet) {
+      grid-template-columns: 50% 50%;
+    }
+    @media (max-width: $mobile) {
+      display: block;
+    }
+  }
+  &__term {
+    @include adaptiveText(21, 18);
+    font-weight: 600;
+    line-height: 142%;
+    @media (max-width: $mobile) {
+      display: inline;
+    }
+  }
+  &__desc {
+    @include adaptiveText(20, 18);
+    color: var(--color-secondary);
+    @media (max-width: $mobile) {
+      display: inline;
+    }
+  }
+}
+

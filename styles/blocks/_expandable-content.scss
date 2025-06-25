@@ -1,0 +1,15 @@
+@use '../helpers/functions' as *;
+@use '../helpers/globals' as *;
+@use '../helpers/mixin' as *;
+
+.expandable-content {
+
+		&__text {
+		}
+
+		&__button {
+      @media (min-width: $mobile) {
+        display: none;
+      }
+		}
+}

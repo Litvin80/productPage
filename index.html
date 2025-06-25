@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="./js/main.js" defer></script>
+        <link rel="stylesheet" href="./styles/style.css">
+        <title>Product Page</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="header" data-js-header>
+                <div class="header__promo promo-header">
+                    <div class="promo-header__container" data-js-header-promo>
+                        <p class="promo-header__message">
+                            Gratis bezorging & montage vanaf € 275 – in Nederland & België
+                        </p>
+                        <div class="promo-header__rating rating">
+                            <div class="rating__stars">
+                                <div class="rating__star is-active"></div>
+                                <div class="rating__star is-active"></div>
+                                <div class="rating__star is-active"></div>
+                                <div class="rating__star is-active"></div>
+                                <div class="rating__star is-active"></div>
+                            </div>
+                            <div class="rating__count">
+                                1599 reviews
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__body">
+                    <div class="header__container">
+                        <a
+                            href="index.html" 
+                            class="header__logo"
+                            aria-label="Home"
+                            title="Home"
+                        >
+                            <img
+                                src="images/header/logo.png" 
+                                alt=""
+                                weight="180" height="21"
+                            />
+                        </a>
+                        <div class="header__overlay" data-js-header-overlay>
+                            <div class="header__menu menu">
+                                <nav class="menu__body">
+                                    <ul class="menu__list">
+                                        <li class="menu__item">
+                                            <a href="#" class="menu__link">Kantoormeubelen</a>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a href="#" class="menu__link">Thuiswerkplek</a>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a href="#" class="menu__link">Kantoorinrichting</a>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a href="#" class="menu__link">Over ons</a>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a href="#" class="menu__link">Contact</a>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a href="#" class="menu__link is-active">Sale</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="header__actions actions-header">
+                            <ul class="actions-header__list">
+                                <li class="actions-header__item">
+                                    <a href="#" class="actions-header__link">
+                                        <img src="icons/search.svg" alt="search">
+                                    </a>
+                                </li>
+                                <li class="actions-header__item">
+                                    <a href="#" class="actions-header__link">
+                                        <img src="icons/heart.svg" alt="heart">
+                                    </a>
+                                </li>
+                                <li class="actions-header__item">
+                                    <a href="#" class="actions-header__link">
+                                        <img src="icons/shopping-cart.svg" alt="shopping-cart">
+                                    </a>
+                                </li>
+                                <li class="actions-header__item">
+                                    <a href="#" class="actions-header__link">
+                                        <img src="icons/profile.svg" alt="profile">
+                                    </a>
+                                </li>
+                                <li class="actions-header__item item-language" id="data-js-header-language">
+                                    <span class="item-language__language">NL</span>
+                                    <ul class="item-language__list">
+
+                                    </ul>
+                                </li>
+                                <li class="actions-header__item item-burger">
+                                    <button
+                                        type="button" 
+                                        class="item-burger__burger-icon icon-menu"
+                                        aria-label="Open menu"
+                                        title="Open menu"
+                                        data-js-header-burger-button
+                                    >
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <section class="description" aria-labelledby="description-title">
+                    <div class="description__container">
+                        <div class="description__body expandable-content" data-js-expandable-content>
+                            <h2 class="description__title title" data-i18n="description_title" id="description-title">
+                                Beschrijving
+                            </h2>
+                            <p class="description__text expandable-content__text" data-i18n="description_text">
+                                Met ons zit-sta bureau werkt u ergonomisch en efficiënt! Daarnaast verbetert u uw werkhouding en is het ideaal om actiever te werken. De snelle en stille motor maakt het bureau zeer gebruiksvriendelijk! Sinds kort is het Fuse zit-sta bureau standaard voorzien van een bedieningspaneel met 4 memory functies.
+                            </p>
+                            <button class="description__button expandable-content__button" data-js-expandable-content-button type="button">
+                                Show more
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <section class="features" aria-labelledby="features-title">
+                    <div class="features__container">
+                        <h2 class="features__title title" id="features-title" data-i18n="features_title">
+                            Eigenschappen
+                        </h2>
+                        <div class="features__body">
+                            <div class="features__specs specs-features">
+                                <dl class="specs-features__item">
+                                    <dt class="specs-features__term">Hoogte frame:</dt>
+                                    <dd class="specs-features__desc">72-117 cm</dd>
+                                </dl>
+                                <dl class="specs-features__item">
+                                    <dt class="specs-features__term">Breedte:</dt>
+                                    <dd class="specs-features__desc">120-180 cm</dd>
+                                </dl>
+                                <dl class="specs-features__item">
+                                    <dt class="specs-features__term">Diepte:</dt>
+                                    <dd class="specs-features__desc">80 cm</dd>
+                                </dl>
+                                <dl class="specs-features__item">
+                                    <dt class="specs-features__term">Memory:</dt>
+                                    <dd class="specs-features__desc">3 standen</dd>
+                                </dl>
+                                <dl class="specs-features__item">
+                                    <dt class="specs-features__term">Verstelbaarheid:</dt>
+                                    <dd class="specs-features__desc">Elektrisch verstelbaar</dd>
+                                </dl>
+                                <dl class="specs-features__item">
+                                    <dt class="specs-features__term">Frame kleuren leverbaar:</dt>
+                                    <dd class="specs-features__desc">Aluminium, zwart, wit</dd>
+                                </dl>
+                                <dl class="specs-features__item">
+                                    <dt class="specs-features__term">Kleuren blad leverbaar:</dt>
+                                    <dd class="specs-features__desc">Midden eiken, bruin eiken, havanna, wit, lichtgrijs, robuust eiken</dd>
+                                </dl>
+                            </div>
+                            <div class="features__specs specs-features">
+                                <dl class="specs-features__item">
+                                    <dt class="specs-features__term">Model:</dt>
+                                    <dd class="specs-features__desc">Recht</dd>
+                                </dl>
+                                <dl class="specs-features__item">
+                                    <dt class="specs-features__term">Type poot:</dt>
+                                    <dd class="specs-features__desc">T-poot</dd>
+                                </dl>
+                                <dl class="specs-features__item">
+                                    <dt class="specs-features__term">Bladdikte:</dt>
+                                    <dd class="specs-features__desc">25 mm</dd>
+                                </dl>
+                                <dl class="specs-features__item">
+                                    <dt class="specs-features__term">Draagvermogen:</dt>
+                                    <dd class="specs-features__desc">100 KG</dd>
+                                </dl>
+                                <dl class="specs-features__item">
+                                    <dt class="specs-features__term">Extra eigenschap:</dt>
+                                    <dd class="specs-features__desc">Snelle stille motor</dd>
+                                </dl>
+                                <dl class="specs-features__item">
+                                    <dt class="specs-features__term">Bladafwerking:</dt>
+                                    <dd class="specs-features__desc">Gelamineerd spaanplaat, afgewerkt met kunststof stootrand</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="video-section">
+                    <div class="video-section__container">
+                        <video
+                            src="videos/video.mp4" 
+                            class="video-section__video"
+                            width="1140"
+                            height="623"
+                            poster="images/video/poster.jpg"
+                            loading="lazy"
+                        >
+                        </video>
+                        <div class="video-section__body">
+                            <h3 class="video-section__sub-title" data-i18n="video-section_sub-title">
+                                Introductie
+                            </h3>
+                            <h2 class="video-section__title" data-i18n="video-section_title">
+                                Maak kennis met onze bsureaus en bureaustoelen
+                            </h2>
+                            <a href="#" class="video-section__link button button--white" data-i18n="video-section_link">
+                                Naar de winkel
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <section class="discover">
+                    <div class="discover__container">
+                        <p class="discover__text title">
+                            Voor een complete kantoorinrichting. Ontdek naast stoelen en bureaus ook kantoorkasten bij Office-Interior. Complete kantooroplossingen door ervaren projectmanagers.
+                        </p>
+                        <div class="discover__body">
+                            <div class="discover__action action-discover">
+                                <h3 class="action-discover__sub-title">
+                                    Hier vindt u alles voor uw kantoor
+                                </h3>
+                                <a href="#" class="action-discover__link button">
+                                    Meer ontdekken
+                                </a>
+                            </div>
+                            <div class="discover__images images-discover">
+                                <img 
+                                    src="images/discover/chair1.png" 
+                                    alt="" 
+                                    class="images-discover__main-image"
+                                    width="506"
+                                    height="674"
+                                    loading="lazy"
+                                >
+                                <img src="images/discover/chair2.png" alt="" class="images-discover__second-image">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="advantages">
+                    <div class="advantages__container">
+                        <ul class="advantages__list">
+                            <li class="advantages__item item-advantages item-advantages--neutral">
+                                <div class="item-advantages__content">
+                                    <div class="item-advantages__icon">
+                                        <img 
+                                            src="icons/information.svg" 
+                                            alt="" 
+                                            aria-hidden="true"
+                                            width="38"
+                                            height="38"
+                                            loading="lazy"
+                                        >
+                                    </div>
+                                    <div class="item-advantages__body">
+                                        <h3 class="item-advantages__title title" data-i18n="advantages_offer_title">
+                                        Informatie of een offerte op maat
+                                        </h3>
+                                        <p class="item-advantages__text" data-i18n="advantages_offer_text">
+                                            Wilt u informatie over de tafel of de prijs voor uw organisatie? Laat je gegevens achter en onze manager belt je terug. We helpen je graag verder.
+                                        </p>
+                                        <a href="#" class="item-advantages__link button" data-i18n="advantages_offer_link">
+                                            Verzoek achterlaten
+                                        </a>
+                                    </div>
+                                </div>
+                                <img src="images/advantages/person.png" alt="" aria-hidden="true" class="item-advantages__background-decor">
+                            </li>
+                            <li class="advantages__item item-advantages item-advantages--yellow">
+                                <div class="item-advantages__content">
+                                    <div class="item-advantages__icon">
+                                        <img 
+                                            src="icons/truck.svg" 
+                                            alt="" 
+                                            aria-hidden="true"
+                                            width="38"
+                                            height="38"
+                                            loading="lazy"
+                                        >
+                                    </div>
+                                    <div class="item-advantages__body">
+                                        <h3 class="item-advantages__title title" data-i18n="advantages_delivery_title">
+                                        Snelle levering
+                                        </h3>
+                                        <p class="item-advantages__text" data-i18n="advantages_delivery_text">
+                                            Uw bestelling wordt binnen 5 werkdagen bezorgd door één van onze vaste eigen chauffeurs. Wel zo prettig!
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="advantages__item item-advantages item-advantages--green">
+                                <div class="item-advantages__content">
+                                    <div class="item-advantages__icon">
+                                        <img 
+                                            src="icons/package.svg" 
+                                            alt="" 
+                                            aria-hidden="true"
+                                            width="38"
+                                            height="38"
+                                            loading="lazy"
+                                        >
+                                    </div>
+                                    <div class="item-advantages__body">
+                                        <h3 class="item-advantages__title title" data-i18n="advantages_design_title">
+                                            Design & Ergonomie
+                                        </h3>
+                                        <p class="item-advantages__text" data-i18n="advantages_design_text">
+                                            Makkelijke toepassingen, geweldige gebruikerservaring en een modern design staan centraal in onze productontwikkelingen.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="advantages__item item-advantages item-advantages--pink">
+                                <div class="item-advantages__content">
+                                    <div class="item-advantages__icon">
+                                        <img 
+                                            src="icons/warranty.svg" 
+                                            alt="" 
+                                            aria-hidden="true"
+                                            width="38"
+                                            height="38"
+                                            loading="lazy"
+                                        >
+                                    </div>
+                                    <div class="item-advantages__body">
+                                        <h3 class="item-advantages__title title" data-i18n="advantages_warranty_title">
+                                            3 jaar garantie
+                                        </h3>
+                                        <p class="item-advantages__text" data-i18n="advantages_warranty_text">
+                                            Wij zijn overtuigd van de kwaliteit die we leveren, daarom kunt u een garantieperiode van minimaal 3 jaar van ons verwachten.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="partners" aria-labelledby="partners-title">
+                    <div class="partners__container">
+                        <h2 class="partners__title" id="partners-title" data-i18n="partners_title">Onze klanten</h2>
+                    </div>
+                    <ul class="partners__list">
+                        <li class="partners__item">
+                            <img src="images/partners/HetKadaster.png" alt="HetKadaster" class="partners__image" loading="lazy">
+                        </li>
+                        <li class="partners__item">
+                            <img src="images/partners/Katoennatie Logo.png" alt="Katoennatie" class="partners__image" loading="lazy">
+                        </li>
+                        <li class="partners__item">
+                            <img src="images/partners/Rogelli.png" alt="Rogelli" class="partners__image" loading="lazy">
+                        </li>
+                        <li class="partners__item">
+                            <img src="images/partners/channelengine.png" alt="channelengine" class="partners__image" loading="lazy">
+                        </li>
+                        <li class="partners__item">
+                            <img src="images/partners/Bidfood.png" alt="Bidfood" class="partners__image" loading="lazy">
+                        </li>
+                        <li class="partners__item">
+                            <img src="images/partners/SingaporeAirlines.png" alt="SingaporeAirlines" class="partners__image" loading="lazy">
+                        </li>
+                        <li class="partners__item">
+                            <img src="images/partners/SHVEnergy.png" alt="SHVEnergy" class="partners__image" loading="lazy">
+                        </li>
+                        <li class="partners__item">
+                            <img src="images/partners/Thyssen Krupp Logo.png" alt="Thyssen Krupp Logo" class="partners__image" loading="lazy">
+                        </li>
+                        <li class="partners__item">
+                            <img src="images/partners/Technische Universiteit logo.png" alt="Technische Universiteit" class="partners__image" loading="lazy">
+                        </li>
+                        <li class="partners__item">
+                            <img src="images/partners/Qpark logo.png" alt="Qpark" class="partners__image" loading="lazy">
+                        </li>
+                        <li class="partners__item">
+                            <img src="images/partners/Lotus Cars logo.png" alt="Lotus Cars" class="partners__image" loading="lazy">
+                        </li>
+                        <li class="partners__item">
+                            <img src="images/partners/PolitieLeuven.png" alt="Politie Leuven" class="partners__image" loading="lazy">
+                        </li>
+                        <li class="partners__item">
+                            <img src="images/partners/EindhovenAirport.png" alt="EindhovenAirport" class="partners__image" loading="lazy">
+                        </li>
+                        <li class="partners__item">
+                            <img src="images/partners/Germeente Rotterdam.png" alt="Germeente Rotterdam" class="partners__image" loading="lazy">
+                        </li>
+                    </ul>
+                </section>
+            </main>
+            <footer class="footer">
+                <div class="footer__container">
+                    <div class="footer__body">
+                        <div class="footer__logo">
+                            <img src="images/footer/logo.png" alt="Office-Interior">
+                        </div>
+                        <nav class="footer__menu menu-footer">
+                            <div class="menu-footer__column">
+                                <a href="#" class="menu-footer__main-link">Categorieën</a>
+                                <ul class="menu-footer__list">
+                                    <li class="menu-footer__item">
+                                        <a href="#" class="menu-footer__link">Kantoormeubelen</a>
+                                    </li>
+                                    <li class="menu-footer__item">
+                                        <a href="#" class="menu-footer__link">Thuiswerkplek</a>
+                                    </li>
+                                    <li class="menu-footer__item">
+                                        <a href="#" class="menu-footer__link">Kantoorinrichting</a>
+                                    </li>
+                                    <li class="menu-footer__item">
+                                        <a href="#" class="menu-footer__link">Sale</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="menu-footer__column">
+                                <a href="#" class="menu-footer__main-link">Over</a>
+                                <ul class="menu-footer__list">
+                                    <li class="menu-footer__item">
+                                        <a href="#" class="menu-footer__link">Over ons</a>
+                                    </li>
+                                    <li class="menu-footer__item">
+                                        <a href="#" class="menu-footer__link">Veel gestelde vragen</a>
+                                    </li>
+                                    <li class="menu-footer__item">
+                                        <a href="#" class="menu-footer__link">Contact</a>
+                                    </li>
+                                    <li class="menu-footer__item">
+                                        <a href="#" class="menu-footer__link">Beoordelingen</a>
+                                        
+                                    </li>
+                                    <li class="menu-footer__item">
+                                        <a href="#" class="menu-footer__link">Privacybeleid</a>
+                                    </li>
+                                    <li class="menu-footer__item">
+                                        <a href="#" class="menu-footer__link">Algemene voorwaarden</a>
+                                    </li>
+                                    <li class="menu-footer__item">
+                                        <a href="#" class="menu-footer__link">Cookie Policy</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="menu-footer__column">
+                                <a href="#" class="menu-footer__main-link">Info</a>
+                                <ul class="menu-footer__list">
+                                    <li class="menu-footer__item">
+                                        <a href="tel:+31850481444" class="menu-footer__link">+31(0)85-0481444</a>
+                                    </li>
+                                    <li class="menu-footer__item">
+                                        <a href="mailto:info@office-interior.nl" class="menu-footer__link">info@office-interior.nl</a>
+                                    </li>
+                                    <li class="menu-footer__item">
+                                        <a 
+                                            href="https://www.google.com/maps?q=Nikkelstraat+28,+4823AB+Breda" 
+                                            class="menu-footer__link"
+                                            target="_blank" 
+                                            rel="noopener noreferrer" 
+                                        >
+                                            Nikkelstraat 284823AB Breda
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <div class="footer__newsletter newsletter">
+                            <h3 class="newsletter__title" data-i18n="newsletter_title">
+                                Nieuwsbrief
+                            </h3>
+                            <p class="newsletter__text" data-i18n="newsletter_text">
+                                Schrijf u nu in voor de nieuwsbrief voor exclusieve informatie die u niet wil missen!
+                            </p>
+                            <form 
+                                action="" 
+                                class="newsletter__form"
+                                method="post"
+                            >
+                                <input 
+                                    type="text"
+                                    name="email"
+                                    class="newsletter__input"
+                                    placeholder="Je e-mailadres"
+                                >
+                                <button type="submit" class="newsletter__button">
+                                    <img src="icons/arrow-right__white.svg" alt="submit-button">
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="footer__extra footer-extra">
+                        <p class="footer-extra__copyright">
+                            © <time datetime="2023">2023</time> Office-Interior
+                        </p>
+                        <div class="footer-extra__payments footer-payments">
+                            <span class="footer-payments__item">
+                                <img src="/images/footer/payments/AMEX.svg" alt="AMEX">
+                            </span>
+                            <span class="footer-payments__item">
+                                <img src="/images/footer/payments/Ideal.svg" alt="Ideal">
+                            </span>
+                            <span class="footer-payments__item">
+                                <img src="/images/footer/payments/Maestro.svg" alt="Maestro">
+                            </span>
+                            <span class="footer-payments__item">
+                                <img src="/images/footer/payments/Mastercard.svg" alt="Mastercard">
+                            </span>
+                            <span class="footer-payments__item">
+                                <img src="/images/footer/payments/PayPal.svg" alt="PayPal">
+                            </span>
+                            <span class="footer-payments__item">
+                                <img src="/images/footer/payments/UnionPay.svg" alt="UnionPay">
+                            </span>
+                            <span class="footer-payments__item">
+                                <img src="/images/footer/payments/Visa.svg" alt="Visa">
+                            </span>
+                        </div>
+                        <div class="footer-extra__soc1als footer-soc1als">
+                            <a 
+                                href="#" 
+                                class="footer-soc1als__link" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Instagram"
+                                title="Instagram"
+                            >
+                                <img src="/images/footer/socials/Instagram.svg" alt="Instagram">
+                            </a>
+                            <a 
+                                href="#" 
+                                class="footer-soc1als__link" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Facebook"
+                                title="Facebook"
+                            >
+                                <img src="/images/footer/socials/Facebook.svg" alt="Facebook">
+                            </a>
+                            <a 
+                                href="#" 
+                                class="footer-soc1als__link" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Twitter"
+                                title="Twitter"
+                            >
+                                <img src="/images/footer/socials/Twitter.svg" alt="Twitter">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+@use './helpers/functions' as *;
+
+:root {
+    --color-light: #FFFFFF;
+    --color-secondary-light: #F0F0F0;
+
+    --color-primary: #2C2929;
+
+    --color-secondary: #8C8C8C;
+    --color-secondary-gray: #DEDEDE;
+
+    --font-family: 'Avenir Next';
+
+    --font-size: #{rem(18)};
+}

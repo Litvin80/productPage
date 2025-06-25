@@ -1,0 +1,94 @@
+@use '../helpers/functions' as *;
+@use '../helpers/globals' as *;
+@use '../helpers/mixin' as *;
+
+.discover {
+  @include adaptiveValue('margin-block', 90, 41);
+  &__container {
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue('row-gap', 50, 28);
+  }
+  &__text {
+    @include adaptiveText(62, 28);
+    line-height: 116%;
+    max-width: rem(1075);
+  }
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 1.5rem;
+    row-gap: rem(24);
+    width: 100%;
+    @include adaptiveValue('padding-right', 100, 10);
+    @media (max-width: $mobile) {
+      margin: 0;
+    }
+    @media (max-width: em(590)) {
+      flex-direction: column-reverse;
+      align-self: flex-start;
+    }
+  }
+  &__images {
+    align-self: center;
+  }
+
+  &__action {
+    align-self: flex-end;
+    @include adaptiveValue('padding-left', 100, 10);
+    @include adaptiveValue('padding-bottom', 78, 10);
+    @media (max-width: $mobile) {
+      margin: 0;
+    }
+    @media (max-width: em(590)) {
+      align-self: flex-start;
+    }
+  }
+}
+.images-discover {
+  position: relative;
+  @include adaptiveValue('padding-left', 117, 70);
+  padding-bottom: rem(36);
+  img {
+    border-radius: rem(20);
+    @media (max-width: $mobile) {
+      border-radius: rem(14);
+    }
+  }
+  &__main-image {
+    @include adaptiveValue('max-width', 506, 265);
+    @include adaptiveValue('max-height', 674, 362);
+  }
+
+  &__second-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: rem(340);
+    max-height: rem(425);
+    @include adaptiveValue('max-width', 340, 186);
+    @include adaptiveValue('max-height', 425, 223);
+  }
+}
+
+.action-discover {
+  max-width: rem(368);
+  &__sub-title {
+    font-size: rem(28);
+    line-height: 116%;
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+    }
+    @media (max-width: $mobile) {
+      font-size: rem(24);
+      &:not(:last-child) {
+        margin-bottom: rem(24);
+      }
+    }
+  }
+  &__link {
+    @media (max-width: em(590)) {
+      display: flex;
+    }
+  }
+}

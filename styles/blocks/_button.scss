@@ -1,0 +1,83 @@
+@use '../helpers/functions' as *;
+@use '../helpers/globals' as *;
+@use '../helpers/mixin' as *;
+@use '../variables' as *;
+
+
+
+// .button {
+//     @include adaptiveTextPX(18, 14, $containerWidth, 1440);
+//     &-small {
+//         padding: rem(10) rem(16);
+//     }
+//     &--dark-grey {
+//         background-color: var(--color-dark-10);
+//     }
+//     @media (any-hover: hover) {
+//         &:hover {
+//             background-color: var(--color-dark-10);
+//             border: rem(1) solid var(--color-accent);
+//             span {
+//                 color: var(--color-accent);
+//             }
+//             .icon--yellow-arrow {
+//                 &::after {
+//                     background-position: center;
+//                 }
+//             }
+//             .icon--yellow-eye {
+//                 &::after {
+//                     transform: scale(1.1);
+//                 }
+//             }
+//             .icon--gray-arrow-down {
+//                 &::after {
+//                     transform: scale(1.1);
+//                     background-image: url('../../icons/arrow-down__yellow.svg');
+//                 }
+//             }
+//         }
+//     }
+//     @media (any-hover: none) {
+//         &:active {
+//             background-color: var(--color-dark-10);
+//             border: rem(1) solid var(--color-accent);
+//             .icon--yellow-arrow {
+//                 &::after {
+//                     background-position: center;
+//                 }
+//             }
+//             .icon--yellow-eye {
+//                 &::after {
+//                     transform: scale(1.1);
+//                 }
+//             }
+//             .icon--gray-arrow-down {
+//                 &::after {
+//                     transform: scale(1.1);
+//                     background-image: url('../../icons/arrow-down__yellow.svg');
+//                 }
+//             }
+//         }
+//     }
+// }
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-primary);
+  border-radius: rem(8);
+  padding-block: rem(10);
+  padding-inline: rem(17);
+  font-size: rem(16);
+  color: var(--color-primary);
+  line-height: 120%;
+  background-color: transparent;
+  transition: all 0.3s ease 0s;
+  &--white {
+    color: var(--color-light);
+    border-color: var(--color-light);
+    border-radius: rem(4);
+  }
+}

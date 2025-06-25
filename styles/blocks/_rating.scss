@@ -1,0 +1,35 @@
+@use '../helpers/functions' as *;
+@use '../helpers/globals' as *;
+@use '../helpers/mixin' as *;
+
+.rating {
+  display: flex;
+  align-items: center;
+  column-gap: rem(8);
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
+  &__stars {
+    display: flex;
+    align-items: center;
+    column-gap: rem(6);
+  }
+  &__star {
+    align-items: center;
+    justify-content: center;  
+    width: rem(18);
+    height: rem(18);
+    background: url('../icons/star__gray.svg') center / contain no-repeat;
+    max-width: 100%;
+    @media (max-width: $mobile) {
+      width: rem(16);
+      height: rem(16);
+    }
+    &.is-active {
+      background: url('../icons/star__yellow.svg') center / contain no-repeat;
+    }
+  }
+  &__count {
+    text-wrap: nowrap;
+  }
+}

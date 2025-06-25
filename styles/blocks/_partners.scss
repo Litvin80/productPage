@@ -1,0 +1,52 @@
+@use '../helpers/functions' as *;
+@use '../helpers/globals' as *;
+@use '../helpers/mixin' as *;
+
+.partners {
+  @include adaptiveValue('margin-top', 90, 41);
+  padding-bottom: rem(44);
+  &__container {
+    &:not(:last-child) {
+      margin-bottom: rem(52);
+    }
+  }
+  &__title {
+    text-align: center;
+    color: #000;
+    font-weight: 500;
+    line-height: 123%;
+    font-size: rem(26);
+  }
+  &__list {
+    display: flex;
+    gap: rem(90);
+    //animation: running-text 30s linear infinite;
+  }
+  &__item {
+    flex: 0 0 auto;
+    width: rem(160);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__image {
+  }
+}
+
+// @keyframes running-text {
+//   0% {
+//     transform: translate(0%);
+//   }
+//   45% {
+//     transform: translate(-100%);
+//   }
+//   50% {
+//     transform: translate(-100%);
+//   }
+//   95% {
+//     transform: translate(0%);
+//   }
+//   100% {
+//     transform: translate(0%);
+//   }
+// }

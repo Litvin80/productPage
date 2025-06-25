@@ -1,0 +1,23 @@
+@use '../helpers/functions' as *;
+@use '../helpers/globals' as *;
+@use '../helpers/mixin' as *;
+
+.description {
+	@include adaptiveValue('margin-block', 90, 41);
+	&__body {
+		max-width: rem(710);
+		display: inline-flex;
+		flex-direction: column;
+		row-gap: rem(40);
+	}
+	&__title {
+		@include adaptiveText(42, 28);
+		line-height: 1.28;
+	}
+	&__text {
+		font-size: rem(20);
+		@media (max-width: $mobile) {
+			font-size: rem(18);
+		}
+	}
+}

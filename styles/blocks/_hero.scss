@@ -1,6 +1,7 @@
 @use '../helpers/functions' as *;
 @use '../helpers/globals' as *;
 @use '../helpers/mixin' as *;
+@use '../variables' as *;
 
 .hero {
   background-color: var(--color-secondary-light);
@@ -61,22 +62,27 @@
   &__block {
     display: grid;
     row-gap: rem(20);
+    column-gap: rem(10);
+    align-items: center;
+    grid-template-columns: auto auto auto 1fr;
+    grid-template-areas: 'price price price price'
+                          'quantity cart favorite .';
     &:not(:last-child) {
       margin-bottom: rem(20);
     }
-    @media (max-width: $mobile) {
+    @media (max-width: $tablet) {
       row-gap: rem(18);
+      grid-template-columns: auto auto auto 1fr;
+      grid-template-areas: 'quantity price price .'
+                          'cart cart favorite .';
       &:not(:last-child) {
         margin-bottom: rem(18);
       }
-      // grid-template-areas: 'quantity price price'
-      //                      'cart cart favorite';
     }
   }
   &__price-block {
     line-height: 1;
-    @media (max-width: $mobile) {
-    }
+    grid-area: price;
   }
   &__price {
     font-size: rem(32);
@@ -88,6 +94,18 @@
     text-decoration: line-through;
   }
   &__actions {
+  }
+  &__cart-button {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    width: 100%;
+    max-width: rem(280);
+    grid-area: cart;
+    @include adaptiveValue("padding-inline", 66, 17, $containerWidth, 991.98);
+  }
+  &__favorite-button {
+    padding-inline: rem(13);
+    grid-area: favorite;
   }
   &__secondary-actions {
     &:not(:last-child) {
@@ -126,25 +144,6 @@
     padding-inline: rem(18);
   }
 }
-.actions-product {
-  display: flex;
-  column-gap: rem(10);
-  &__quantity {
-  }
-  &__cart-button {
-    background-color: var(--color-primary);
-    color: var(--color-light);
-    width: 100%;
-    max-width: rem(280);
-    @media (max-width: $mobile) {
-    }
-  }
-  &__favorite-button {
-    padding-inline: rem(13);
-    @media (max-width: $mobile) {
-    }
-  }
-}
 .quantity {
   display: inline-flex;
   align-items: center;
@@ -154,8 +153,7 @@
   padding-inline: rem(18);
   column-gap: rem(20);
   line-height: 1;
-  @media (max-width: $mobile) {
-  }
+  grid-area: quantity;
   &__button {
     transition: all 0.3s ease 0s;
     @media (any-hover: hover) {
@@ -174,10 +172,13 @@
   }
 }
 .secondary-actions {
-  display: grid;
-  grid-template-columns: auto 1fr;
+  display: flex;
   align-items: center;
   column-gap: rem(10);
+  row-gap: rem(18);
+  @media (min-width: $mobile) {
+    flex-wrap: wrap;
+  }
   &__button {
     padding-inline: rem(20);
     line-height: 1;

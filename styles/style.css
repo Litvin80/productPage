@@ -1351,13 +1351,19 @@ a:hover {
 .product-content__block {
   display: grid;
   row-gap: 1.25rem;
+  column-gap: 0.625rem;
+  align-items: center;
+  grid-template-columns: auto auto auto 1fr;
+  grid-template-areas: "price price price price" "quantity cart favorite .";
 }
 .product-content__block:not(:last-child) {
   margin-bottom: 1.25rem;
 }
-@media (max-width: 47.99875em) {
+@media (max-width: 61.99875em) {
   .product-content__block {
     row-gap: 1.125rem;
+    grid-template-columns: auto auto auto 1fr;
+    grid-template-areas: "quantity price price ." "cart cart favorite .";
   }
   .product-content__block:not(:last-child) {
     margin-bottom: 1.125rem;
@@ -1365,6 +1371,7 @@ a:hover {
 }
 .product-content__price-block {
   line-height: 1;
+  grid-area: price;
 }
 .product-content__price {
   font-size: 2rem;
@@ -1374,6 +1381,28 @@ a:hover {
   font-size: 1rem;
   color: rgba(44, 41, 41, 0.26);
   text-decoration: line-through;
+}
+.product-content__cart-button {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  width: 100%;
+  max-width: 17.5rem;
+  grid-area: cart;
+  padding-inline: 4.125rem;
+}
+@media (max-width: 92em) {
+  .product-content__cart-button {
+    padding-inline: calc(66px + (17 - 66) * (100vw - 1472px) / (991.98 - 1472));
+  }
+}
+@media (max-width: 61.99875em) {
+  .product-content__cart-button {
+    padding-inline: 1.0625rem;
+  }
+}
+.product-content__favorite-button {
+  padding-inline: 0.8125rem;
+  grid-area: favorite;
 }
 .product-content__secondary-actions:not(:last-child) {
   margin-bottom: 1.625rem;
@@ -1408,19 +1437,6 @@ a:hover {
   padding-inline: 1.125rem;
 }
 
-.actions-product {
-  display: flex;
-  column-gap: 0.625rem;
-}
-.actions-product__cart-button {
-  background-color: var(--color-primary);
-  color: var(--color-light);
-  width: 100%;
-  max-width: 17.5rem;
-}
-.actions-product__favorite-button {
-  padding-inline: 0.8125rem;
-}
 .quantity {
   display: inline-flex;
   align-items: center;
@@ -1430,6 +1446,7 @@ a:hover {
   padding-inline: 1.125rem;
   column-gap: 1.25rem;
   line-height: 1;
+  grid-area: quantity;
 }
 .quantity__button {
   transition: all 0.3s ease 0s;
@@ -1449,10 +1466,15 @@ a:hover {
 }
 
 .secondary-actions {
-  display: grid;
-  grid-template-columns: auto 1fr;
+  display: flex;
   align-items: center;
   column-gap: 0.625rem;
+  row-gap: 1.125rem;
+}
+@media (min-width: 47.99875em) {
+  .secondary-actions {
+    flex-wrap: wrap;
+  }
 }
 .secondary-actions__button {
   padding-inline: 1.25rem;

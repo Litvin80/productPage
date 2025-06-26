@@ -13,53 +13,53 @@
 //     &--dark-grey {
 //         background-color: var(--color-dark-10);
 //     }
-//     @media (any-hover: hover) {
-//         &:hover {
-//             background-color: var(--color-dark-10);
-//             border: rem(1) solid var(--color-accent);
-//             span {
-//                 color: var(--color-accent);
-//             }
-//             .icon--yellow-arrow {
-//                 &::after {
-//                     background-position: center;
-//                 }
-//             }
-//             .icon--yellow-eye {
-//                 &::after {
-//                     transform: scale(1.1);
-//                 }
-//             }
-//             .icon--gray-arrow-down {
-//                 &::after {
-//                     transform: scale(1.1);
-//                     background-image: url('../../icons/arrow-down__yellow.svg');
-//                 }
-//             }
-//         }
-//     }
-//     @media (any-hover: none) {
-//         &:active {
-//             background-color: var(--color-dark-10);
-//             border: rem(1) solid var(--color-accent);
-//             .icon--yellow-arrow {
-//                 &::after {
-//                     background-position: center;
-//                 }
-//             }
-//             .icon--yellow-eye {
-//                 &::after {
-//                     transform: scale(1.1);
-//                 }
-//             }
-//             .icon--gray-arrow-down {
-//                 &::after {
-//                     transform: scale(1.1);
-//                     background-image: url('../../icons/arrow-down__yellow.svg');
-//                 }
-//             }
-//         }
-//     }
+    // @media (any-hover: hover) {
+    //     &:hover {
+    //         background-color: var(--color-dark-10);
+    //         border: rem(1) solid var(--color-accent);
+    //         span {
+    //             color: var(--color-accent);
+    //         }
+    //         .icon--yellow-arrow {
+    //             &::after {
+    //                 background-position: center;
+    //             }
+    //         }
+    //         .icon--yellow-eye {
+    //             &::after {
+    //                 transform: scale(1.1);
+    //             }
+    //         }
+    //         .icon--gray-arrow-down {
+    //             &::after {
+    //                 transform: scale(1.1);
+    //                 background-image: url('../../icons/arrow-down__yellow.svg');
+    //             }
+    //         }
+    //     }
+    // }
+    // @media (any-hover: none) {
+    //     &:active {
+    //         background-color: var(--color-dark-10);
+    //         border: rem(1) solid var(--color-accent);
+    //         .icon--yellow-arrow {
+    //             &::after {
+    //                 background-position: center;
+    //             }
+    //         }
+    //         .icon--yellow-eye {
+    //             &::after {
+    //                 transform: scale(1.1);
+    //             }
+    //         }
+    //         .icon--gray-arrow-down {
+    //             &::after {
+    //                 transform: scale(1.1);
+    //                 background-image: url('../../icons/arrow-down__yellow.svg');
+    //             }
+    //         }
+    //     }
+    // }
 // }
 
 .button {
@@ -68,7 +68,7 @@
   justify-content: center;
   border: 1px solid var(--color-primary);
   border-radius: rem(8);
-  padding-block: rem(10);
+  padding-block: rem(11);
   padding-inline: rem(17);
   font-size: rem(16);
   color: var(--color-primary);

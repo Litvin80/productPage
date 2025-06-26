@@ -5,62 +5,29 @@
     display: inline-flex;
     align-items: center;
     column-gap: rem(10);  
-    &:after {
-        transition: all 0.2s ease 0s;
-        width: rem(18);
-        height: rem(18);
+    &:before {
+        transition: all 0.3s ease 0s;
+        width: rem(20);
+        height: rem(20);
         content: '';
         flex-shrink: 0;
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
     }
-}
-
-.icon--yellow-arrow {
-    @media (any-hover: hover) {
-        &:hover {
-            &::after {
-                background-position: center;
-            }
+    &-comment {
+        &::before {
+            background-image: url('../icons/comment.svg');
         }
     }
-    @media (any-hover: none) {
-        &:active {
-            &::after {
-                background-position: center;
-            }
+    &-shopping-cart {
+        &::before {
+            background-image: url('../icons/shopping-cart__white.svg');
         }
     }
-    &::after {
-        background-position: rem(-3) rem(3);
-        background-image: url('../../icons/arrow-top-right__yellow.svg');
-    }
-}
-.icon--yellow-eye {
-    &::after {
-        width: rem(20);
-        height: rem(20);
-        background-image: url('../../icons/eye__yellow.svg');
-    }
-}
-
-.icon--gray-arrow-down {
-    @media (any-hover: hover) {
-        &:hover {
-            &::after {
-                background-position: center;
-            }
-        }
-    }
-    @media (any-hover: none) {
-        &:active {
-            &::after {
-                background-position: center;
-            }
-        }
-    }
-    &::after {
-        background-image: url('../../icons/arrow-down__gray.svg');
+    &-heart {
+       &::before {
+            background-image: url('../icons/heart.svg');
+        } 
     }
 }

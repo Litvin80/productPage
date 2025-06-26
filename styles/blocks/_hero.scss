@@ -15,16 +15,17 @@
   }
   &__body {
     display: grid;
+    align-items: center;
     grid-template-columns: 60% 40%;
     @media (max-width: em(1200)) {
       grid-template-columns: 55% 45%;
     }
-    @media (max-width: $mobile) {
+    @media (max-width: $tablet) {
       grid-template-columns: auto;
     }
   }
   &__slider {
-    @include adaptiveValue('padding-right', 60, 10);
+    @include adaptiveValue('padding-right', 60, 10, $containerWidth, 991.98);
   }
   &__product-content {
   }

@@ -43,4 +43,35 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   burgerButtonElement.addEventListener('click', onBurgerButtonClick);
+
+  const swiperTumbs = new Swiper('.mySwiperTumbs', {
+    spaceBetween: 18,
+    slidesPerView: 3,
+    freeMode: true,
+    watchSlidesProgress: true,
+    direction: 'vertical',
+  })
+
+  const swiper = new Swiper('.mySwiper', {
+    spaceBetween: 2,
+    navigation: {
+      nextEl: '.aside-slider__button-next',
+      prevEl: '.aside-slider__button-prev',
+      nextEl: '.main-slider__button-next',
+      prevEl: '.main-slider__button-prev',
+    },
+    thumbs: {
+      swiper: swiperTumbs,
+    },
+    breakpoints: {
+    0: {
+      direction: 'horizontal',
+    },
+    767.98: {
+      direction: 'vertical',
+    },
+  },
+  });
 });
+
+

@@ -6,6 +6,11 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <script src="./js/main.js" defer></script>
         <link rel="stylesheet" href="./styles/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
         <title>Product Page</title>
     </head>
     <body>
@@ -125,7 +130,52 @@
                             <span class="breadcrumb__link">Electrisch zit-sta bureau Fuse</span>
                         </nav>
                         <div class="hero__body">
-                            <div class="hero__slider"></div>
+                            <div class="hero__slider slider">
+                                <div class="slider__aside aside-slider">
+                                    <div class="aside-slider__button aside-slider__button-prev">
+                                        <img src="icons/slider-arrow.svg" alt="">
+                                    </div>
+                                    <div class="aside-slider__thumbs thumbs-slider">
+                                        <div thumbsSlider="" class="swiper mySwiperTumbs">
+                                            <div class="swiper-wrapper thumbs-slider__wrapper">
+                                                <div class="swiper-slide thumbs-slider__slide">
+                                                    <img src="images/slider/thumbs1.png" />
+                                                </div>
+                                                <div class="swiper-slide thumbs-slider__slide">
+                                                    <img src="images/slider/thumbs2.png" />
+                                                </div>
+                                                <div class="swiper-slide thumbs-slider__slide">
+                                                    <img src="images/slider/thumbs3.png" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="aside-slider__button aside-slider__button-next">
+                                        <img src="icons/slider-arrow.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="slider__main main-slider">
+                                    <div class="main-slider__button main-slider__button-prev">
+                                        <img src="icons/slider-arrow.svg" alt="">
+                                    </div>
+                                    <div class="swiper mySwiper">
+                                        <div class="swiper-wrapper main-slider__wrapper">
+                                            <div class="swiper-slide main-slider__slide">
+                                                <img src="images/slider/1.png" alt="">
+                                            </div>
+                                            <div class="swiper-slide main-slider__slide">
+                                                <img src="images/slider/1.png" alt="">
+                                            </div>
+                                            <div class="swiper-slide main-slider__slide">
+                                                <img src="images/slider/1.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main-slider__button main-slider__button-next">
+                                        <img src="icons/slider-arrow.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
                             <div class="hero__product-content product-content">
                                 <h1 class="product-content__title title">
                                     Elektrisch zit-sta bureau Fuse

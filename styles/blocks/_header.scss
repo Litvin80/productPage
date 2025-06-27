@@ -423,12 +423,25 @@
   &__link {
     color: inherit;
     line-height: 1;
+    padding-inline: rem(16);
+    padding-block: rem(6);
+    border-radius: rem(8);
+    transition: all 0.3s ease 0s;
+    border: 1px solid transparent;
     &.is-active {
-      padding-inline: rem(16);
-      padding-block: rem(6);
       background-color: var(--color-primary);
       color: var(--color-light);
-      border-radius: rem(8);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        border-color: var(--color-primary);
+      }
+    }
+    
+    @media (any-hover: none) {
+      &:active {
+        
+      }
     }
   }
 }

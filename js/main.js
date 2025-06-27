@@ -44,6 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   burgerButtonElement.addEventListener('click', onBurgerButtonClick);
 
+  // =============================
+  // Swiper Init
+  // =============================
+
   const swiperTumbs = new Swiper('.mySwiperTumbs', {
     spaceBetween: 18,
     slidesPerView: 3,
@@ -72,6 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   },
   });
+
+  // =============================
+  // Marquee Init
+  // =============================
 
   function initMarquee() {
     const container = document.querySelector('[data-js-marquee]');
@@ -105,8 +113,38 @@ document.addEventListener('DOMContentLoaded', () => {
     updateAnimation();
     window.addEventListener('resize', updateAnimation);
   }
-
   initMarquee();
+
+  // =============================
+  // Accordion (Mobile Only)
+  // =============================
+
+  function accordion() {
+    if (window.innerWidth >= 767.98) return;
+    const titles = document.querySelectorAll('[data-js-accordion-title]');
+    const contents = document.querySelectorAll('[data-js-accordion-content]');
+
+    titles.forEach(item => item.addEventListener('click', () => {
+      const activeContent = document.querySelector('#' + item.dataset.tab);
+
+      if (activeContent.classList.contains('is-active')) {
+        activeContent.classList.remove('is-active');
+        item.classList.remove('is-active');
+        activeContent.style.maxHeight = 0;
+      } else {
+        activeContent.classList.remove('is-active');
+        activeContent.style.maxHeight = 0;
+
+        item.classList.remove('is-active');
+
+        item.classList.add('is-active');
+        activeContent.classList.add('is-active');
+        activeContent.style.maxHeight = activeContent.scrollHeight + 'px';
+      }
+    }));
+  }
+  accordion();
+
 });
 
 

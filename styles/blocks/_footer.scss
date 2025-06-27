@@ -41,7 +41,6 @@
   }
 
   &__menu {
-    //align-self: center;
     justify-content: center;
   }
 
@@ -63,12 +62,10 @@
   @media (max-width: $mobile) {
     grid-column: span 1;
     flex-direction: column;
+    margin-bottom: rem(40);
   }
   &__column {
     @media (max-width: $mobile) {
-      &:last-child {
-        margin-block: rem(40);
-      }
     }
   }
   &__main-link {
@@ -78,12 +75,44 @@
     line-height: 1;
     display: inline-flex;
     margin-bottom: rem(16);
+    @media (max-width: $mobile) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: rem(10);  
+      &:after {
+        transition: all 0.3s ease 0s;
+        width: rem(12);
+        height: rem(12);
+        content: '';
+        flex-shrink: 0;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('../icons/arrow-down__gray.svg');
+      }
+      &.is-active {
+        &:after {
+          transform: rotate(-90deg);
+        }
+      }
+    }
   }
 
   &__list {
     display: flex;
     flex-direction: column;
     row-gap: rem(12);
+    @media (max-width: $mobile) {
+      transition: all 0.3s ease 0s;
+      max-height: 0;
+      @include hide;
+      overflow: hidden;
+      &.is-active {
+        @include show;
+        max-height: 100%;
+      }
+    }
   }
 
   &__item {
@@ -163,7 +192,8 @@
   justify-content: space-between;
   gap: 1rem;
   @media (max-width: $mobile) {
-    padding-block: rem(16);
+    padding-top: rem(0);
+    padding-bottom: rem(16);
     flex-direction: column;
     align-items: start;
     row-gap: rem(40);

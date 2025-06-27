@@ -26,8 +26,23 @@
         }
     }
     &-heart {
-       &::before {
+        &::before {
             background-image: url('../icons/heart.svg');
         } 
+    }
+    &-phone {
+        &::before {
+            background-image: url('../icons/phone.svg');
+        }
+    }
+    &-mail {
+        &::before {
+            background-image: url('../icons/mail.svg');
+        }
+    }
+    &-location {
+        &::before {
+            background-image: url('../icons/location.svg');
+        }
     }
 }

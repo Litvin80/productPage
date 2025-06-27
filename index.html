@@ -556,8 +556,14 @@
                         </div>
                         <nav class="footer__menu menu-footer">
                             <div class="menu-footer__column">
-                                <a href="#" class="menu-footer__main-link">Categorieën</a>
-                                <ul class="menu-footer__list">
+                                <h3 
+                                    class="menu-footer__main-link" 
+                                    data-js-accordion-title
+                                    data-tab="tab-1"
+                                >
+                                    Categorieën
+                                </h3>
+                                <ul class="menu-footer__list" id="tab-1" data-js-accordion-content>
                                     <li class="menu-footer__item">
                                         <a href="#" class="menu-footer__link">Kantoormeubelen</a>
                                     </li>
@@ -573,8 +579,14 @@
                                 </ul>
                             </div>
                             <div class="menu-footer__column">
-                                <a href="#" class="menu-footer__main-link">Over</a>
-                                <ul class="menu-footer__list">
+                                <h3 
+                                    class="menu-footer__main-link" 
+                                    data-js-accordion-title
+                                    data-tab="tab-2"
+                                >
+                                    Over
+                                </h3>
+                                <ul class="menu-footer__list" id="tab-2" data-js-accordion-content>
                                     <li class="menu-footer__item">
                                         <a href="#" class="menu-footer__link">Over ons</a>
                                     </li>
@@ -600,20 +612,30 @@
                                 </ul>
                             </div>
                             <div class="menu-footer__column">
-                                <a href="#" class="menu-footer__main-link">Info</a>
-                                <ul class="menu-footer__list">
+                                <h3 
+                                    class="menu-footer__main-link" 
+                                    data-js-accordion-title
+                                    data-tab="tab-3"
+                                >
+                                    Info
+                                </h3>
+                                <ul class="menu-footer__list" id="tab-3" data-js-accordion-content>
                                     <li class="menu-footer__item">
-                                        <a href="tel:+31850481444" class="menu-footer__link">+31(0)85-0481444</a>
+                                        <a href="tel:+31850481444" class="menu-footer__link icon icon-phone">
+                                            +31(0)85-0481444
+                                        </a>
                                     </li>
                                     <li class="menu-footer__item">
-                                        <a href="mailto:info@office-interior.nl" class="menu-footer__link">info@office-interior.nl</a>
+                                        <a href="mailto:info@office-interior.nl" class="menu-footer__link icon icon-mail">
+                                            info@office-interior.nl
+                                        </a>
                                     </li>
                                     <li class="menu-footer__item">
                                         <a 
                                             href="https://www.google.com/maps?q=Nikkelstraat+28,+4823AB+Breda" 
-                                            class="menu-footer__link"
+                                            class="menu-footer__link icon icon-location"
                                             target="_blank" 
-                                            rel="noopener noreferrer" 
+                                            rel="noopener noreferrer"
                                         >
                                             Nikkelstraat 284823AB Breda
                                         </a>

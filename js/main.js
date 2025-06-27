@@ -72,6 +72,41 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   },
   });
+
+  function initMarquee() {
+    const container = document.querySelector('[data-js-marquee]');
+    const track = document.querySelector('.partners__track');
+    const inner = track.querySelector('.partners__list');
+
+    const speed = 40;
+
+    if(!inner.dataset.cloned) {
+      const originalCards = Array.from(inner.children);
+      const totalWidth = inner.scrollWidth;
+      const containerWidth = container.offsetWidth;
+
+      while (totalWidth < containerWidth * 2) {
+        originalCards.forEach(card => {
+          inner.appendChild(card.cloneNode(true));
+        })
+        totalWidth = inner.scrollWidth;
+      }
+
+      inner.dataset.cloned = 'true';
+    }
+
+    const updateAnimation = () => {
+      const totalWidth = inner.scrollWidth / 2;
+      const duration = totalWidth / speed;
+      inner.style.animationName = 'marquee';
+      inner.style.animationDuration = `${duration}s`;
+    }
+
+    updateAnimation();
+    window.addEventListener('resize', updateAnimation);
+  }
+
+  initMarquee();
 });
 
 

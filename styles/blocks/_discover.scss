@@ -87,8 +87,28 @@
     }
   }
   &__link {
+    font-weight: 500;
     @media (max-width: em(590)) {
       display: flex;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.9;
+        .icon-arrow-top {
+          &::after {
+            transform: translate(rem(2), rem(-2));
+          }
+        }
+      }
+    }
+    @media (any-hover: none) {
+      &:active {
+        .icon-arrow-top {
+          &::after {
+            transform: translate(rem(2), rem(-2));
+          }
+        }
+      }
     }
   }
 }

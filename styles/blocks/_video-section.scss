@@ -46,5 +46,52 @@
   &__link {
     padding-inline: rem(57);
     font-size: rem(16);
+    position: relative;
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      right: rem(-20);
+      transition: all 0.3s ease 0s;
+      opacity: 0;
+    }
+    &::after {
+      width: rem(16);
+      height: rem(16);
+      transform: rotate(-90deg);
+      background: url('../icons/arrow-down__white.svg') center/contain no-repeat;
+    }
+    &::before {
+      width: rem(45);
+      height: rem(45);
+      top: rem(rem(-3));
+      transform: rotate(0deg);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        &::before {
+          opacity: 1;
+          right: rem(-33);
+          border: rem(1.5) solid var(--color-light);
+          transform: rotate(45deg);
+        }
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+    @media (any-hover: none) {
+      &:active {
+        &::before {
+          opacity: 1;
+          right: rem(-30);
+          border: rem(1) solid var(--color-primary);
+          transform: rotate(45deg);
+        }
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
   }
 }

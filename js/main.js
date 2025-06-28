@@ -79,6 +79,41 @@ document.addEventListener('DOMContentLoaded', () => {
   },
   });
 
+
+  // =============================
+  // Accordion (Mobile Only)
+  // =============================
+
+  function accordion() {
+    //if (window.innerWidth >= 767.98) return;
+    const titles = document.querySelectorAll('[data-js-accordion-title]');
+
+    titles.forEach(item => item.addEventListener('click', () => {
+      const activeContent = document.querySelector('#' + item.dataset.tab);
+
+      if (activeContent.classList.contains('is-active')) {
+        activeContent.classList.remove('is-active');
+        item.classList.remove('is-active');
+        activeContent.style.maxHeight = 0;
+      } else {
+        activeContent.classList.remove('is-active');
+        activeContent.style.maxHeight = 0;
+
+        item.classList.remove('is-active');
+
+        item.classList.add('is-active');
+        activeContent.classList.add('is-active');
+        activeContent.style.maxHeight = activeContent.scrollHeight + 'px';
+      }
+    }));
+  }
+  
+  accordion();
+  window.addEventListener('resize', accordion);
+
+});
+
+window.addEventListener('load', () => {
   // =============================
   // Marquee Init
   // =============================
@@ -116,37 +151,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateAnimation);
   }
   initMarquee();
-
-  // =============================
-  // Accordion (Mobile Only)
-  // =============================
-
-  function accordion() {
-    if (window.innerWidth >= 767.98) return;
-    const titles = document.querySelectorAll('[data-js-accordion-title]');
-    const contents = document.querySelectorAll('[data-js-accordion-content]');
-
-    titles.forEach(item => item.addEventListener('click', () => {
-      const activeContent = document.querySelector('#' + item.dataset.tab);
-
-      if (activeContent.classList.contains('is-active')) {
-        activeContent.classList.remove('is-active');
-        item.classList.remove('is-active');
-        activeContent.style.maxHeight = 0;
-      } else {
-        activeContent.classList.remove('is-active');
-        activeContent.style.maxHeight = 0;
-
-        item.classList.remove('is-active');
-
-        item.classList.add('is-active');
-        activeContent.classList.add('is-active');
-        activeContent.style.maxHeight = activeContent.scrollHeight + 'px';
-      }
-    }));
-  }
-  accordion();
-
-});
-
+})
 

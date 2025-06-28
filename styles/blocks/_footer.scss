@@ -65,8 +65,6 @@
     margin-bottom: rem(40);
   }
   &__column {
-    @media (max-width: $mobile) {
-    }
   }
   &__main-link {
     color: var(--color-primary);
@@ -123,6 +121,19 @@
 
   &__link {
     color: inherit;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        letter-spacing: rem(0.5);
+        font-weight: 500;
+      }
+    }
+    @media (any-hover: none) {
+      &:active {
+        letter-spacing: rem(0.5);
+        font-weight: 500;
+      }
+    }
   }
 }
 .newsletter {

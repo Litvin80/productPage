@@ -8,11 +8,15 @@
   column-gap: rem(8);
   @media (max-width: $mobile) {
     flex-direction: column;
+    column-gap: rem(4);
   }
   &__stars {
     display: flex;
     align-items: center;
     column-gap: rem(6);
+    @media (max-width: $mobileSmall) {
+      column-gap: rem(2);
+    }
   }
   &__star {
     align-items: center;
@@ -21,6 +25,20 @@
     height: rem(18);
     background: url('../icons/star__gray.svg') center / contain no-repeat;
     max-width: 100%;
+    opacity: 1;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.8;
+        transform: scale(1.15);
+      }
+    }
+    @media (any-hover: none) {
+      &:active {
+        opacity: 0.6;
+        transform: scale(1.15);
+      }
+    }
     @media (max-width: $mobile) {
       width: rem(16);
       height: rem(16);

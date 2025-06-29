@@ -1,0 +1,21 @@
+@use '../helpers/functions' as *;
+@use '../helpers/globals' as *;
+@use '../helpers/mixin' as *;
+
+.breadcrumb {
+  color: var(--color-primary);
+  font-size: rem(14);
+  &__link {
+    color: inherit;
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    @media (any-hover: none) {
+      &:active {
+        text-decoration: underline;
+      }
+    }
+  }
+}

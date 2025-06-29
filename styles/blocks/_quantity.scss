@@ -1,0 +1,31 @@
+@use '../helpers/functions' as *;
+@use '../helpers/globals' as *;
+@use '../helpers/mixin' as *;
+
+.quantity {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-primary);
+  border-radius: rem(8);
+  padding-inline: rem(18);
+  column-gap: rem(20);
+  line-height: 1;
+  grid-area: quantity;
+  &__button {
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.4);
+      }
+    }
+    @media (any-hover: none) {
+      &:active {
+        transform: scale(1.4);
+      }
+    }
+  }
+  &__value {
+    font-size: rem(18);
+  }
+}

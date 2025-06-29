@@ -6,6 +6,9 @@
   position: relative;
   display: inline-block;
   &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(4);
     position: absolute;
     top: 100%;
     background: white;
@@ -16,6 +19,7 @@
     transition: all 0.3s;
     pointer-events: none;
     border-radius: 0.5rem;
+    padding: rem(4);
     &-right {
       right: 0;
     }
@@ -27,15 +31,19 @@
       padding: 0.5rem 1rem;
       text-decoration: none;
       display: block;
+      border-radius: rem(4);
+      border: 1px solid transparent; 
+      transition: all 0.3s ease 0s;
       @media (any-hover: hover) {
         &:hover {
-          background: #f3f4f6;
+          border-color: var(--color-primary);
         }
-      }
-      
+      } 
       @media (any-hover: none) {
         &:active {
-          background: #f3f4f6;
+          &:hover {
+            border-color: var(--color-primary);
+          }
         }
       }
     }

@@ -30,23 +30,6 @@
   &__product-content {
   }
 }
-.breadcrumb {
-  color: var(--color-primary);
-  font-size: rem(14);
-  &__link {
-    color: inherit;
-    @media (any-hover: hover) {
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-    @media (any-hover: none) {
-      &:active {
-        text-decoration: underline;
-      }
-    }
-  }
-}
 .product-content {
   &__title {
     @include adaptiveText(52, 32);
@@ -58,7 +41,6 @@
   &__description {
     line-height: 140%;
   }
-
   &__colors {
     display: flex;
     column-gap: rem(8);
@@ -70,7 +52,6 @@
       margin-bottom: rem(20);
     }
   }
-
   &__color {
     height: rem(32);
     width: rem(32);
@@ -89,7 +70,6 @@
         }
       }
     }
-    
     @media (any-hover: none) {
       &:active {
         border: rem(2) solid var(--color-primary);
@@ -106,7 +86,6 @@
       object-position: center;
     }
   }
-
   &__option-groups {
     &:not(:last-child) {
       @include adaptiveValue('margin-bottom', 40, 30);
@@ -180,8 +159,6 @@
   @media (max-width: $mobile) {
     row-gap: rem(20);
   }
-  &__body {
-  }
   &__label {
     font-weight: 600;
     line-height: 1;
@@ -195,33 +172,20 @@
   &__option {
     line-height: 1;
     padding-inline: rem(18);
-  }
-}
-.quantity {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--color-primary);
-  border-radius: rem(8);
-  padding-inline: rem(18);
-  column-gap: rem(20);
-  line-height: 1;
-  grid-area: quantity;
-  &__button {
-    transition: all 0.3s ease 0s;
     @media (any-hover: hover) {
       &:hover {
-        transform: scale(1.4);
+        color: #000;
+        border-color: #000;
+        letter-spacing: rem(1);
+        font-weight: 500;
       }
     }
     @media (any-hover: none) {
       &:active {
-        transform: scale(1.4);
+        letter-spacing: rem(1);
+        font-weight: 500;
       }
     }
-  }
-  &__value {
-    font-size: rem(18);
   }
 }
 .secondary-actions {
@@ -242,23 +206,5 @@
     font-size: rem(16);
     @media (max-width: $mobile) {
     }
-  }
-}
-.features {
-  &__item {
-    display: flex;
-    align-items: center;
-    column-gap: rem(10);
-    &:not(:last-child) {
-      margin-bottom: rem(10);
-    }
-  }
-  &__icon {
-    width: rem(18);
-    height: rem(18);
-    object-fit: contain;
-  }
-  &__text {
-    font-size: rem(16);
   }
 }

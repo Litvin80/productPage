@@ -17,6 +17,22 @@
       grid-template-columns: auto;
     }
   }
+  &__item {
+    display: flex;
+    align-items: center;
+    column-gap: rem(10);
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
+  }
+  &__icon {
+    width: rem(18);
+    height: rem(18);
+    object-fit: contain;
+  }
+  &__text {
+    font-size: rem(16);
+  }
 }
 .specs-features {
   display: flex;

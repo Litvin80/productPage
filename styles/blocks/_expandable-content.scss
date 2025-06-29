@@ -11,18 +11,52 @@
     .expandable-content__button {
       opacity: 0;
 			visibility: hidden;
+      left: -100%;
+      .description & {
+        display: none;
+      }
     }
     .expandable-content__hiden {
       max-height: 100%;
+      display: inline;
+    }
+    .expandable-content__text {
+      padding-bottom: 0;
+    }
+    .expandable-content__dots {
+      display: none;
     }
   }
   &__hiden {
 		max-height: 0;
+  }
+  &__text-block {
+    p {
+      display: inline;
+      @media (max-width: $mobile) {
+        &.expandable-content__hiden {
+          display: block;
+        }
+      }
+    }
+    
+  }
+  &__text {
+    padding-bottom: rem(36);
+    transition: all 0.3s ease 0s;
   }
   &__button {
 		transition: all 0.3s ease 0s;
     font-weight: 600;
     font-size: rem(16);
 		text-wrap: nowrap;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  &__dots {
+    @media (min-width: $mobile) {
+      display: none;
+    }
   }
 }

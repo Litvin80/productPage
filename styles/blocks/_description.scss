@@ -6,18 +6,38 @@
 	@include adaptiveValue('margin-block', 90, 41);
 	&__body {
 		max-width: rem(710);
-		display: inline-flex;
-		flex-direction: column;
-		row-gap: rem(40);
+		.expandable-content__hiden {
+			max-height: 100%;
+			@media (max-width: $mobile) {
+				max-height: 0;
+			}
+		}
+		.expandable-content__button {
+			@media (max-width: $mobile) {
+				position: relative;
+				display: block;
+  			margin-left: auto;
+			}
+		}
 	}
 	&__title {
 		@include adaptiveText(42, 28);
 		line-height: 1.28;
+		margin-bottom: rem(40);
+		@media (max-width: $mobile) {
+			margin-bottom: rem(30);
+		}
 	}
 	&__text {
 		font-size: rem(20);
 		@media (max-width: $mobile) {
 			font-size: rem(18);
+			position: relative;
+		}
+	}
+	&__button {
+		@media (min-width: $mobile) {
+			display: none;
 		}
 	}
 }

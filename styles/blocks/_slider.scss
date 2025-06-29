@@ -54,16 +54,10 @@
     }
   }
   &__button-prev {
-    &.swiper-button-disabled {
-      opacity: 0.4;
-    }
   }
   &__button-next {
     img {
       transform: translate(-50%, -50%) rotate(180deg);
-    }
-    &.swiper-button-disabled {
-      opacity: 0.4;
     }
   }
   &__thumbs {
@@ -168,4 +162,7 @@
 
   }
   &-slide {}
+  &-button-disabled {
+    opacity: 0.4;
+  }
 }

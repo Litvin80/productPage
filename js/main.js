@@ -1,24 +1,66 @@
-const expandableButtons = document.querySelectorAll('[data-js-expandable-content-button]');
+// =============================
+// Accordion (Mobile Only)
+// =============================
 
-expandableButtons.forEach((expandableButton) => {
-  expandableButton?.addEventListener('click', () => {
-    const root = expandableButton.closest('[data-js-expandable-content]');
-    const { offsetHeight, scrollHeight } = root;
+function expandableContent() {
+  const expandableButtons = document.querySelectorAll('[data-js-expandable-content-button]');
 
-    root.classList.add('is-expanded');
+  expandableButtons.forEach((expandableButton) => {
+    expandableButton?.addEventListener('click', () => {
+      const root = expandableButton.closest('[data-js-expandable-content]');
+      const { offsetHeight, scrollHeight } = root;
 
-    root.animate([
-      { maxHeight: `${offsetHeight}px` },
-      { maxHeight: `${scrollHeight}px` }
-    ], {
-      duration: 500,
-      easing: 'ease'
-    }).onfinish = () => {
-      root.style.maxHeight = `${scrollHeight}px`;
-    };
+      root.classList.add('is-expanded');
+
+      root.animate([
+        { maxHeight: `${offsetHeight}px` },
+        { maxHeight: `${scrollHeight}px` }
+      ], {
+        duration: 500,
+        easing: 'ease'
+      }).onfinish = () => {
+        root.style.maxHeight = `${scrollHeight}px`;
+      };
+    });
   });
-});
+}
 
+// =============================
+// Marquee Init
+// =============================
+
+function initMarquee() {
+  const container = document.querySelector('[data-js-marquee]');
+  const track = document.querySelector('.partners__track');
+  const inner = track.querySelector('.partners__list');
+
+  const speed = 40;
+
+  if(!inner.dataset.cloned) {
+    const originalCards = Array.from(inner.children);
+    const totalWidth = inner.scrollWidth;
+    const containerWidth = container.offsetWidth;
+
+    while (totalWidth < containerWidth * 2) {
+      originalCards.forEach(card => {
+        inner.appendChild(card.cloneNode(true));
+      })
+      totalWidth = inner.scrollWidth;
+    }
+
+    inner.dataset.cloned = 'true';
+  }
+
+  const updateAnimation = () => {
+    const totalWidth = inner.scrollWidth / 2;
+    const duration = totalWidth / speed;
+    inner.style.animationName = 'marquee';
+    inner.style.animationDuration = `${duration}s`;
+  }
+
+  updateAnimation();
+  window.addEventListener('resize', updateAnimation);
+}
 
 // =============================
 // Accordion (Mobile Only)
@@ -132,47 +174,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   accordion();
+  expandableContent();
   window.matchMedia('(max-width: 767.98px)').addEventListener('change', accordion);
   mediaQuery.addEventListener('change', accordion);
 });
 
 window.addEventListener('load', () => {
-  // =============================
-  // Marquee Init
-  // =============================
-
-  function initMarquee() {
-    const container = document.querySelector('[data-js-marquee]');
-    const track = document.querySelector('.partners__track');
-    const inner = track.querySelector('.partners__list');
-
-    const speed = 40;
-
-    if(!inner.dataset.cloned) {
-      const originalCards = Array.from(inner.children);
-      const totalWidth = inner.scrollWidth;
-      const containerWidth = container.offsetWidth;
-
-      while (totalWidth < containerWidth * 2) {
-        originalCards.forEach(card => {
-          inner.appendChild(card.cloneNode(true));
-        })
-        totalWidth = inner.scrollWidth;
-      }
-
-      inner.dataset.cloned = 'true';
-    }
-
-    const updateAnimation = () => {
-      const totalWidth = inner.scrollWidth / 2;
-      const duration = totalWidth / speed;
-      inner.style.animationName = 'marquee';
-      inner.style.animationDuration = `${duration}s`;
-    }
-
-    updateAnimation();
-    window.addEventListener('resize', updateAnimation);
-  }
   initMarquee();
 })
 

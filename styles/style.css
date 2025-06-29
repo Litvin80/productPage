@@ -367,6 +367,8 @@ a:hover {
 .menu__link.is-active {
   background-color: var(--color-primary);
   color: var(--color-light);
+  font-weight: 500;
+  pointer-events: none;
 }
 @media (any-hover: hover) {
   .menu__link:hover {
@@ -408,6 +410,21 @@ a:hover {
 @media (max-width: 47.99875em) {
   .promo-header__container {
     font-size: 0.9375rem;
+  }
+}
+
+.rating__star {
+  opacity: 1;
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .rating__star:hover {
+    opacity: 0.6;
+  }
+}
+@media (any-hover: none) {
+  .rating__star:active {
+    opacity: 0.9;
   }
 }
 
@@ -457,6 +474,20 @@ a:hover {
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url("../icons/arrow-top-right__gray.svg");
+}
+.icon-arrow-down:before {
+  content: none;
+}
+.icon-arrow-down::after {
+  transition: all 0.3s ease 0s;
+  width: 0.625rem;
+  height: 0.625rem;
+  content: "";
+  flex-shrink: 0;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("../icons/arrow-down__gray.svg");
 }
 
 .button {
@@ -1360,7 +1391,7 @@ a:hover {
   .video-section__link:active::before {
     opacity: 1;
     right: -1.875rem;
-    border: 0.0625rem solid var(--color-primary);
+    border: 0.0625rem solid var(--color-light);
     transform: rotate(45deg);
   }
   .video-section__link:active::after {
@@ -1670,9 +1701,28 @@ a:hover {
   width: 2rem;
   border-radius: 50%;
   overflow: hidden;
+  transition: opacity 0.3s ease 0s;
 }
 .product-content__color.is-active {
   border: 0.125rem solid var(--color-primary);
+}
+@media (any-hover: hover) {
+  .product-content__color:hover {
+    border: 0.125rem solid var(--color-primary);
+    opacity: 0.8;
+  }
+  .product-content__color:hover.is-active {
+    opacity: 1;
+  }
+}
+@media (any-hover: none) {
+  .product-content__color:active {
+    border: 0.125rem solid var(--color-primary);
+    opacity: 0.8;
+  }
+  .product-content__color:active.is-active {
+    opacity: 1;
+  }
 }
 .product-content__color img {
   object-fit: cover;
@@ -1994,6 +2044,62 @@ a:hover {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown__content {
+  position: absolute;
+  top: 100%;
+  background: white;
+  min-width: 10rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(-0.625rem);
+  transition: all 0.3s;
+  pointer-events: none;
+  border-radius: 0.5rem;
+}
+.dropdown__content-right {
+  right: 0;
+}
+.dropdown__content-left {
+  left: 0;
+}
+.dropdown__content a {
+  color: #374151;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  display: block;
+}
+@media (any-hover: hover) {
+  .dropdown__content a:hover {
+    background: #f3f4f6;
+  }
+}
+@media (any-hover: none) {
+  .dropdown__content a:active {
+    background: #f3f4f6;
+  }
+}
+@media (any-hover: hover) {
+  .dropdown:hover .dropdown__content {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .dropdown:hover .icon-arrow-down::after {
+    transform: rotate(-90deg);
+  }
+}
+@media (any-hover: none) {
+  .dropdown:active .dropdown__content {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

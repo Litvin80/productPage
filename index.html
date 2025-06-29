@@ -54,7 +54,18 @@
                                 <nav class="menu__body">
                                     <ul class="menu__list">
                                         <li class="menu__item dropdown">
-                                            <a href="#" class="menu__link">Kantoormeubelen</a>
+                                            <a href="#" class="menu__link dropdown__button">
+                                                <span class="icon icon-arrow-down">
+                                                    Kantoormeubelen
+                                                </span>
+                                            </a>
+                                            <ul
+                                                class="dropdown__content dropdown__content-left"
+                                            >
+                                                <li><a href="#">Bureaus</a></li>
+                                                <li><a href="#">Stoelen</a></li>
+                                                <li><a href="#">Kasten</a></li>
+                                            </ul>
                                         </li>
                                         <li class="menu__item">
                                             <a href="#" class="menu__link">Thuiswerkplek</a>
@@ -97,10 +108,18 @@
                                         <img src="icons/profile.svg" alt="profile">
                                     </a>
                                 </li>
-                                <li class="actions-header__item item-language" id="data-js-header-language">
-                                    <span class="item-language__language">NL</span>
-                                    <ul class="item-language__list">
-
+                                <li class="actions-header__item dropdown item-language">
+                                    <span class="item-language__language dropdown__button">
+                                        <span class="icon icon-arrow-down">
+                                            NL
+                                        </span>
+                                    </span>
+                                    <ul
+                                        class="dropdown__content dropdown__content-right"
+                                    >
+                                        <li><a href="#">English (EN)</a></li>
+                                        <li><a href="#">Deutsch (DE)</a></li>
+                                        <li><a href="#">Français (FR)</a></li>
                                     </ul>
                                 </li>
                                 <li class="actions-header__item item-burger">

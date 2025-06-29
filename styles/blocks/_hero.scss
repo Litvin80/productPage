@@ -76,8 +76,28 @@
     width: rem(32);
     border-radius: 50%;
     overflow: hidden;
+    transition: opacity 0.3s ease 0s;
     &.is-active {
       border: rem(2) solid var(--color-primary);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        border: rem(2) solid var(--color-primary);
+        opacity: 0.8;
+        &.is-active {
+          opacity: 1;
+        }
+      }
+    }
+    
+    @media (any-hover: none) {
+      &:active {
+        border: rem(2) solid var(--color-primary);
+        opacity: 0.8;
+        &.is-active {
+          opacity: 1;
+        }
+      }
     }
     img {
       object-fit: cover;

@@ -61,4 +61,20 @@
             background-image: url('../icons/arrow-top-right__gray.svg');
         }
     }
+    &-arrow-down {
+        &:before {
+            content: none;
+        }
+        &::after {
+            transition: all 0.3s ease 0s;
+            width: rem(10);
+            height: rem(10);
+            content: '';
+            flex-shrink: 0;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url('../icons/arrow-down__gray.svg');
+        }
+    }
 }

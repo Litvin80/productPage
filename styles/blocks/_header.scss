@@ -72,8 +72,7 @@
   &__item {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center; 
   }
   &__link {
     display: inline-flex;
@@ -87,12 +86,11 @@
   }
 }
 .item-language {
+  &__language {
+  }
 
-		&__language {
-		}
-
-		&__list {
-		}
+  &__list {
+  }
 }
 .item-burger {
   @media (min-width: $mobile) {
@@ -161,6 +159,8 @@
     &.is-active {
       background-color: var(--color-primary);
       color: var(--color-light);
+      font-weight: 500;
+      pointer-events: none;
     }
     @media (any-hover: hover) {
       &:hover {
@@ -204,6 +204,22 @@
     column-gap: rem(10);
     @media (max-width: $mobile) {
       font-size: rem(15);
+    }
+  }
+}
+.rating {
+  &__star {
+    opacity: 1;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+    @media (any-hover: none) {
+      &:active {
+        opacity: 0.9;
+      }
     }
   }
 }

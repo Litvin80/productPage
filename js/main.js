@@ -17,6 +17,55 @@
 //   })
 
 
+// =============================
+// Accordion (Mobile Only)
+// =============================
+const mediaQuery = window.matchMedia('(max-width: 767.98px)');
+
+function accordion() {
+  const titles = document.querySelectorAll('[data-js-accordion-title]');
+
+  if (!mediaQuery.matches) {
+    titles.forEach(item => {
+      const activeContent = document.querySelector('#' + item.dataset.tab);
+      if (item._accordionHandler) {
+        item.removeEventListener('click', item._accordionHandler);
+        delete item._accordionHandler;
+      }
+      item.classList.remove('is-active');
+      activeContent?.classList.remove('is-active');
+      if (activeContent) activeContent.style.maxHeight = '';
+    });
+    return;
+  }
+
+  titles.forEach(item => {
+    if (item._accordionHandler) return;
+
+    const handler = () => {
+      const activeContent = document.querySelector('#' + item.dataset.tab);
+      const isOpen = activeContent.classList.contains('is-active');
+
+      document.querySelectorAll('[data-js-accordion-title]').forEach(i => {
+        const content = document.querySelector('#' + i.dataset.tab);
+        i.classList.remove('is-active');
+        content?.classList.remove('is-active');
+        if (content) content.style.maxHeight = 0;
+      });
+
+      if (!isOpen) {
+        item.classList.add('is-active');
+        activeContent.classList.add('is-active');
+        activeContent.style.maxHeight = activeContent.scrollHeight + 'px';
+      }
+    };
+
+    item._accordionHandler = handler;
+    item.addEventListener('click', handler);
+  });
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const selectors = {
     root: '[data-js-header]',
@@ -79,38 +128,9 @@ document.addEventListener('DOMContentLoaded', () => {
   },
   });
 
-
-  // =============================
-  // Accordion (Mobile Only)
-  // =============================
-
-  function accordion() {
-    //if (window.innerWidth >= 767.98) return;
-    const titles = document.querySelectorAll('[data-js-accordion-title]');
-
-    titles.forEach(item => item.addEventListener('click', () => {
-      const activeContent = document.querySelector('#' + item.dataset.tab);
-
-      if (activeContent.classList.contains('is-active')) {
-        activeContent.classList.remove('is-active');
-        item.classList.remove('is-active');
-        activeContent.style.maxHeight = 0;
-      } else {
-        activeContent.classList.remove('is-active');
-        activeContent.style.maxHeight = 0;
-
-        item.classList.remove('is-active');
-
-        item.classList.add('is-active');
-        activeContent.classList.add('is-active');
-        activeContent.style.maxHeight = activeContent.scrollHeight + 'px';
-      }
-    }));
-  }
-  
   accordion();
-  window.addEventListener('resize', accordion);
-
+  window.matchMedia('(max-width: 767.98px)').addEventListener('change', accordion);
+  mediaQuery.addEventListener('change', accordion);
 });
 
 window.addEventListener('load', () => {

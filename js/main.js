@@ -1,20 +1,23 @@
-// document.querySelector('[data-js-expandable-content-button]')
-//   ?.addEventListener('click', () => {
-//     const root = document.querySelector('[data-js-expandable-content]')
-//     const { offsetHeight, scrollHeight } = root
+const expandableButtons = document.querySelectorAll('[data-js-expandable-content-button]');
 
-//     root.classList.add('is-expanded')
+expandableButtons.forEach((expandableButton) => {
+  expandableButton?.addEventListener('click', () => {
+    const root = expandableButton.closest('[data-js-expandable-content]');
+    const { offsetHeight, scrollHeight } = root;
 
-//     root.animate([
-//       { maxHeight: `${offsetHeight}px` },
-//       { maxHeight: `${scrollHeight}px` }
-//     ], {
-//       duration: 500,
-//       easing: 'ease'
-//     }).onfinish = () => {
-//       root.style.maxHeight = `${scrollHeight}px`
-//     }
-//   })
+    root.classList.add('is-expanded');
+
+    root.animate([
+      { maxHeight: `${offsetHeight}px` },
+      { maxHeight: `${scrollHeight}px` }
+    ], {
+      duration: 500,
+      easing: 'ease'
+    }).onfinish = () => {
+      root.style.maxHeight = `${scrollHeight}px`;
+    };
+  });
+});
 
 
 // =============================

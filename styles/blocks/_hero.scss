@@ -38,8 +38,17 @@
       margin-bottom: rem(20);
     }
   }
-  &__description {
+  &__expandable {
     line-height: 140%;
+    &:not(:last-child) {
+      margin-bottom: rem(18);
+    }
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+  &__expandable-button {
+    color: var(--color-primary);
   }
   &__colors {
     display: flex;

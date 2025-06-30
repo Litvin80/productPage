@@ -1,5 +1,5 @@
 // =============================
-// Accordion (Mobile Only)
+// Expandable Content
 // =============================
 
 function expandableContent() {
@@ -61,6 +61,26 @@ function initMarquee() {
   updateAnimation();
   window.addEventListener('resize', updateAnimation);
 }
+
+// =============================
+// Dropdown
+// =============================
+
+function dropdown() {
+  const dropdownButtons = document.querySelectorAll('[data-js-dropdown]');
+
+  dropdownButtons.forEach((button) => {
+    const dropdownContent = button.nextElementSibling;
+
+    if (dropdownContent?.hasAttribute('data-js-dropdown-cont')) {
+      button.addEventListener('click', () => {
+        dropdownContent.classList.toggle('is-active');
+        button.classList.toggle('is-active');
+      });
+    }
+  });
+}
+
 
 // =============================
 // Accordion (Mobile Only)
@@ -175,6 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   accordion();
   expandableContent();
+  dropdown();
   window.matchMedia('(max-width: 767.98px)').addEventListener('change', accordion);
   mediaQuery.addEventListener('change', accordion);
 });

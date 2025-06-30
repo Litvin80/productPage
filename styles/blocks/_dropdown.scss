@@ -5,6 +5,16 @@
 .dropdown {
   position: relative;
   display: inline-block;
+  &__button {
+    &.is-active {
+      border: 1px solid var(--color-primary);
+      .icon-arrow-down {
+        &::after {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
   &__content {
     display: flex;
     flex-direction: column;
@@ -22,9 +32,17 @@
     padding: rem(4);
     &-right {
       right: 0;
+      @media (max-width: $tablet) {
+        left: -100%;
+      }
     }
     &-left {
       left: 0;
+    }
+    &.is-active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
     }
     a {
       color: #374151;

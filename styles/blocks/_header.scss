@@ -189,7 +189,7 @@
     border-radius: rem(8);
     transition: all 0.3s ease 0s;
     border: 1px solid transparent;
-    &.is-active {
+    &.is-active-tab {
       background-color: var(--color-primary);
       color: var(--color-light);
       font-weight: 500;

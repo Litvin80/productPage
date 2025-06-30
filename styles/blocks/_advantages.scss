@@ -57,6 +57,22 @@
     font-size: rem(20);
     line-height: 142%;
   }
+  &__link {
+    font-weight: 400;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        letter-spacing: rem(0.5);
+        font-weight: 500;
+      }
+    }
+    @media (any-hover: none) {
+      &:active {
+        letter-spacing: rem(0.5);
+        font-weight: 500;
+      }
+    }
+  }
   &__background-decor {
     position: absolute;
     bottom: 0;

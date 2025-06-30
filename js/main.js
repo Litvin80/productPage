@@ -101,7 +101,6 @@ function dropdown() {
   });
 }
 
-
 // =============================
 // Accordion (Mobile Only)
 // =============================
@@ -149,8 +148,10 @@ function accordion() {
   });
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
+  // =============================
+  // Menu Burger
+  // =============================
   const selectors = {
     root: '[data-js-header]',
     overlay: '[data-js-header-overlay]',

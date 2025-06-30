@@ -142,11 +142,52 @@
     width: 100%;
     max-width: rem(280);
     grid-area: cart;
+    text-wrap: nowrap;
     @include adaptiveValue("padding-inline", 66, 17, $containerWidth, 991.98);
+    @media (any-hover: hover) {
+      &:hover {
+        letter-spacing: rem(0.5);
+        font-weight: 500;
+        .icon-comment {
+          &::before {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+    @media (any-hover: none) {
+      &:active {
+        letter-spacing: rem(0.5);
+        font-weight: 500;
+        .icon-comment {
+          &::before {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
   }
   &__favorite-button {
     padding-inline: rem(13);
     grid-area: favorite;
+    @media (any-hover: hover) {
+      &:hover {
+        .icon-heart {
+          &::before {
+            animation: pulse 0.6s ease;
+          }
+        }
+      }
+    }
+    @media (any-hover: none) {
+      &:active {
+        .icon-heart {
+          &::before {
+            animation: pulse 0.6s ease;
+          }
+        }
+      }
+    }
   }
   &__secondary-actions {
     &:not(:last-child) {
@@ -208,7 +249,27 @@
   &__button {
     padding-inline: rem(20);
     line-height: 1;
-    @media (max-width: $mobile) {
+    @media (any-hover: hover) {
+      &:hover {
+        letter-spacing: rem(0.5);
+        font-weight: 500;
+        .icon-comment {
+          &::before {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+    @media (any-hover: none) {
+      &:active {
+        letter-spacing: rem(0.5);
+        font-weight: 500;
+        .icon-comment {
+          &::before {
+            transform: scale(1.05);
+          }
+        }
+      }
     }
   }
   &__text {

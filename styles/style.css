@@ -933,6 +933,22 @@ a:hover {
   font-size: 1.25rem;
   line-height: 142%;
 }
+.item-advantages__link {
+  font-weight: 400;
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .item-advantages__link:hover {
+    letter-spacing: 0.03125rem;
+    font-weight: 500;
+  }
+}
+@media (any-hover: none) {
+  .item-advantages__link:active {
+    letter-spacing: 0.03125rem;
+    font-weight: 500;
+  }
+}
 .item-advantages__background-decor {
   position: absolute;
   bottom: 0;
@@ -1911,6 +1927,7 @@ a:hover {
   width: 100%;
   max-width: 17.5rem;
   grid-area: cart;
+  text-wrap: nowrap;
   padding-inline: 4.125rem;
 }
 @media (max-width: 92em) {
@@ -1923,9 +1940,37 @@ a:hover {
     padding-inline: 1.0625rem;
   }
 }
+@media (any-hover: hover) {
+  .product-content__cart-button:hover {
+    letter-spacing: 0.03125rem;
+    font-weight: 500;
+  }
+  .product-content__cart-button:hover .icon-comment::before {
+    transform: scale(1.05);
+  }
+}
+@media (any-hover: none) {
+  .product-content__cart-button:active {
+    letter-spacing: 0.03125rem;
+    font-weight: 500;
+  }
+  .product-content__cart-button:active .icon-comment::before {
+    transform: scale(1.05);
+  }
+}
 .product-content__favorite-button {
   padding-inline: 0.8125rem;
   grid-area: favorite;
+}
+@media (any-hover: hover) {
+  .product-content__favorite-button:hover .icon-heart::before {
+    animation: pulse 0.6s ease;
+  }
+}
+@media (any-hover: none) {
+  .product-content__favorite-button:active .icon-heart::before {
+    animation: pulse 0.6s ease;
+  }
 }
 .product-content__secondary-actions:not(:last-child) {
   margin-bottom: 1.625rem;
@@ -1988,6 +2033,24 @@ a:hover {
 .secondary-actions__button {
   padding-inline: 1.25rem;
   line-height: 1;
+}
+@media (any-hover: hover) {
+  .secondary-actions__button:hover {
+    letter-spacing: 0.03125rem;
+    font-weight: 500;
+  }
+  .secondary-actions__button:hover .icon-comment::before {
+    transform: scale(1.05);
+  }
+}
+@media (any-hover: none) {
+  .secondary-actions__button:active {
+    letter-spacing: 0.03125rem;
+    font-weight: 500;
+  }
+  .secondary-actions__button:active .icon-comment::before {
+    transform: scale(1.05);
+  }
 }
 .secondary-actions__text {
   font-size: 1rem;

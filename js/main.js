@@ -1,7 +1,6 @@
 // =============================
 // Expandable Content
 // =============================
-
 function expandableContent() {
   const expandableButtons = document.querySelectorAll('[data-js-expandable-content-button]');
 
@@ -28,7 +27,6 @@ function expandableContent() {
 // =============================
 // Marquee Init
 // =============================
-
 function initMarquee() {
   const container = document.querySelector('[data-js-marquee]');
   const track = document.querySelector('.partners__track');
@@ -65,18 +63,40 @@ function initMarquee() {
 // =============================
 // Dropdown
 // =============================
-
 function dropdown() {
   const dropdownButtons = document.querySelectorAll('[data-js-dropdown]');
+  const isMobile = window.matchMedia('(max-width: 767.98px)').matches;
 
+  if (!isMobile) {
+    // При переході на десктоп — прибрати класи і слухачі
+    dropdownButtons.forEach((button) => {
+      const dropdownContent = button.nextElementSibling;
+
+      if (dropdownContent?.hasAttribute('data-js-dropdown-cont')) {
+        button.classList.remove('is-active');
+        dropdownContent.classList.remove('is-active');
+
+        if (button._dropdownHandler) {
+          button.removeEventListener('click', button._dropdownHandler);
+          delete button._dropdownHandler;
+        }
+      }
+    });
+    return;
+  }
+
+  // Мобільна логіка: додати слухач, якщо ще не доданий
   dropdownButtons.forEach((button) => {
     const dropdownContent = button.nextElementSibling;
 
-    if (dropdownContent?.hasAttribute('data-js-dropdown-cont')) {
-      button.addEventListener('click', () => {
+    if (dropdownContent?.hasAttribute('data-js-dropdown-cont') && !button._dropdownHandler) {
+      const handler = () => {
         dropdownContent.classList.toggle('is-active');
         button.classList.toggle('is-active');
-      });
+      };
+
+      button._dropdownHandler = handler;
+      button.addEventListener('click', handler);
     }
   });
 }
@@ -86,7 +106,6 @@ function dropdown() {
 // Accordion (Mobile Only)
 // =============================
 const mediaQuery = window.matchMedia('(max-width: 767.98px)');
-
 function accordion() {
   const titles = document.querySelectorAll('[data-js-accordion-title]');
 
@@ -195,9 +214,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   accordion();
   expandableContent();
-  dropdown();
-  window.matchMedia('(max-width: 767.98px)').addEventListener('change', accordion);
-  mediaQuery.addEventListener('change', accordion);
+  if (mediaQuery.matches) {
+    dropdown();
+  }
+  window.matchMedia('(max-width: 767.98px)').addEventListener('change', () => {
+    accordion();
+    dropdown();
+  });
+  mediaQuery.addEventListener('change', () => {
+    accordion();
+    dropdown();
+  });
 });
 
 window.addEventListener('load', () => {

@@ -136,66 +136,6 @@
     }
   }
 }
-.newsletter {
-  max-width: rem(300);
-  @media (max-width: em(1100)) {
-    order: 2;
-    max-width: rem(400);
-  }
-  @media (max-width: $mobile) {
-    margin-bottom: rem(40);
-  }
-  &__title {
-    font-weight: 500;
-    font-size: rem(20);
-    line-height: 1.2;
-    &:not(:last-child) {
-      margin-bottom: rem(16);
-    }
-  }
-  &__text {
-    font-size: rem(16);
-    line-height: 1.38;
-    &:not(:last-child) {
-      margin-bottom: rem(30);
-    }
-    @media (max-width: $mobile) {
-      &:not(:last-child) {
-        margin-bottom: rem(24);
-      }
-    }
-  }
-  &__form {
-    display: inline-flex;
-    padding-inline: rem(12);
-    padding-block: rem(10);
-    background-color: var(--color-secondary-light);
-    border-radius: rem(40);
-    justify-content: space-between;
-    @media (max-width: $tablet) {
-      display: flex;
-    }
-  }
-  &__input {
-    margin-left: rem(12);
-    margin-right: rem(10);
-    background-color: transparent;
-    font-size: rem(16);
-    &::placeholder {
-      color: inherit;
-    }
-  }
-  &__button {
-    width: rem(38);
-    height: rem(38);
-    background-color: var(--color-primary);
-    opacity: 0.24;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100%;
-  }
-}
 .footer-extra {
   display: flex;
   align-items: center;
@@ -245,9 +185,22 @@
     height: rem(32);
     border: 1px solid var(--color-secondary-gray);
     border-radius: rem(4);
+    transition: all 0.3s ease 0s;
     @media (max-width: $tablet) {
       width: rem(34);
       height: rem(24);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.1);
+        border: 1px solid var(--color-primary);
+      }
+    }
+    @media (any-hover: none) {
+      &:active {
+        transform: scale(1.1);
+        border: 1px solid var(--color-primary);
+      }
     }
   }
 }
@@ -261,6 +214,16 @@
     display: inline-flex;
     img {
       max-width: 100%;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        animation: pulse 0.6s ease;
+      }
+    }
+    @media (any-hover: none) {
+      &:active {
+        animation: pulse 0.6s ease;
+      }
     }
   }
 }

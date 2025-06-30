@@ -32,7 +32,6 @@
   &__images {
     align-self: center;
   }
-
   &__action {
     align-self: flex-end;
     @include adaptiveValue('padding-left', 100, 10);
@@ -70,7 +69,6 @@
     @include adaptiveValue('max-height', 425, 223);
   }
 }
-
 .action-discover {
   max-width: rem(368);
   &__sub-title {
